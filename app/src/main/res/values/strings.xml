@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">XCritical</string>
+    <string name="log_image">image log</string>
+    <string name="forgot_pas"><u>Забыли пароль?</u></string>
+    <string name="input_password">Введите пароль</string>
+    <string name="input_email">Введите E-mail</string>
+    <string name="button_sign_in">Войти</string>
+    <string name="button_registration">Зарегестрироваться</string>
+    <string name="email_text">E-mail</string>
+    <string name="password_text">Пароль</string>
+</resources>
