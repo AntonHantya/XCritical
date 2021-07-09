@@ -9,9 +9,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="button_sign_in">#687BDD</color>
     <color name="button_registration">#1A1933</color>
-    <color name="forgot_pass">#29315C</color>
+    <color name="forgot_pass">#687BDD</color>
     <color name="main_color">#04050E</color>
-    <color name="text_color_dark">#212235</color>
+    <color name="text_color_dark">#7373A4</color>
     <color name="text_color_light">#64646A</color>
-    <color name="red">#F00004</color>
+    <color name="red">#FFFF0000</color>
 </resources>
