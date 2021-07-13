@@ -164,6 +164,7 @@
                 android:background="@drawable/corner_radius"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="incorrectData"
                 android:text="@string/button_sign_in"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@color/white"
