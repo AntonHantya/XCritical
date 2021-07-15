@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
                 pas = true
             }
             if(eml && pas){
-                val login = Intent(this, BottomNavBar::class.java)
+                val login = Intent(this, NavBarActivity::class.java)
                 startActivity(login)
             }
         }

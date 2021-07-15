@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ma_nav"
+    app:startDestination="@id/folderFragment">
+
+    <fragment
+        android:id="@+id/folderFragment"
+        android:name="com.example.xcritical.FolderFragment"
+        android:label="fragment_folder"
+        tools:layout="@layout/fragment_folder" />
+    <fragment
+        android:id="@+id/plusFragment"
+        android:name="com.example.xcritical.PlusFragment"
+        android:label="fragment_plus"
+        tools:layout="@layout/fragment_plus" />
+    <fragment
+        android:id="@+id/imageFragment"
+        android:name="com.example.xcritical.ImageFragment"
+        android:label="fragment_image"
+        tools:layout="@layout/fragment_image" />
+</navigation>

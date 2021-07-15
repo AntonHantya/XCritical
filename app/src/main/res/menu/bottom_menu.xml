@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="Folder"
+        android:icon="@drawable/ic_folder"
+        android:id="@+id/folderFragment"/>
+    <item
+        android:title="Plus"
+        android:icon="@drawable/ic_pluscircle"
+        android:id="@+id/plusFragment"/>
+    <item android:title="Image"
+        android:icon="@drawable/ic_image"
+        android:id="@+id/imageFragment"/>
+</menu>
