@@ -11,5 +11,5 @@
         android:id="@+id/plusFragment"/>
     <item android:title="Image"
         android:icon="@drawable/ic_image"
-        android:id="@+id/imageFragment"/>
+        android:id="@+id/imageFragment" />
 </menu>
