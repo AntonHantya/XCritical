@@ -15,4 +15,5 @@
     <color name="text_color_light">#64646A</color>
     <color name="red">#FFFF0000</color>
     <color name="nav_bar">#0D0D31</color>
+    <color name="plus_btn">#FF7849</color>
 </resources>

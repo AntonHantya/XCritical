@@ -11,10 +11,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/nav_bar"
+        app:itemIconSize="32dp"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/nav_bar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_menu"/>
+        app:menu="@menu/bottom_menu">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/projects_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="0dp"
+            android:layout_marginBottom="8dp"
+            app:maxImageSize="25dp"
+            app:fabCustomSize="38dp"
+            android:layout_gravity="bottom|center"
+            android:backgroundTint="@color/plus_btn"
+            app:tint="@android:color/white"/>
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     <fragment
         android:id="@+id/fragment"
@@ -27,4 +43,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/my_nav" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
