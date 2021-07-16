@@ -33,19 +33,29 @@ class MainActivity : AppCompatActivity() {
         buttonLogin.setOnClickListener() {
             viewModel.email = inputEmail.text.toString()
             viewModel.password = inputPassword.text.toString()
+            var eml: Boolean = false
+            var pas: Boolean = false
 
             if(viewModel.incorrectEmail()) {
                 incEmail.visibility = View.VISIBLE
+                eml = false
             }
             else {
                 incEmail.visibility = View.INVISIBLE
+                eml = true
             }
             if(viewModel.incorrectPassword())
             {
                 incPassword.visibility = View.VISIBLE
+                pas = false
             }
             else {
                 incPassword.visibility = View.INVISIBLE
+                pas = true
+            }
+            if(eml && pas){
+                val login = Intent(this, NavBarActivity::class.java)
+                startActivity(login)
             }
         }
     }
