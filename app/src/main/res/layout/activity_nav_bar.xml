@@ -23,13 +23,16 @@
             android:id="@+id/projects_fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="0dp"
-            android:layout_marginBottom="8dp"
-            app:maxImageSize="25dp"
-            app:fabCustomSize="38dp"
             android:layout_gravity="bottom|center"
+            android:layout_marginBottom="8dp"
+            android:adjustViewBounds="false"
             android:backgroundTint="@color/plus_btn"
-            app:tint="@android:color/white"/>
+            android:baselineAlignBottom="false"
+            android:padding="0dp"
+            app:fabCustomSize="38dp"
+            app:maxImageSize="30dp"
+            app:srcCompat="@drawable/ic_plus"
+            app:tint="@color/white" />
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     <fragment
