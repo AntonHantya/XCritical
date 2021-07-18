@@ -22,7 +22,8 @@ class NavBarActivity : AppCompatActivity() {
 
         val fab = findViewById<FloatingActionButton>(R.id.projects_fab)
         fab.setOnClickListener {
-            navController.navigate(R.id.plusFragment)
+            val rc = Intent(this, RecyclerActivity::class.java)
+            startActivity(rc)
         }
 
 
