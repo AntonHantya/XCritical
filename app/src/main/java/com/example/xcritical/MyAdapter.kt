@@ -3,6 +3,7 @@ package com.example.xcritical
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.imageview.ShapeableImageView
@@ -11,8 +12,8 @@ import org.w3c.dom.Text
 class MyAdapter(private val newsList: ArrayList<RcData>): RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        val titleImage : ShapeableImageView = itemView.findViewById(R.id.title_image)
-        val tvHeading : TextView = itemView.findViewById(R.id.tvHeading)
+        val frameRc : ImageView = itemView.findViewById(R.id.frameRc)
+        val textDate : TextView = itemView.findViewById(R.id.textDate)
 
     }
 
@@ -23,8 +24,8 @@ class MyAdapter(private val newsList: ArrayList<RcData>): RecyclerView.Adapter<M
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = newsList[position]
-        holder.titleImage.setImageResource(currentItem.titleImage)
-        holder.tvHeading.text = currentItem.heading
+        holder.frameRc.setImageResource(currentItem.titleImage)
+        holder.textDate.text = currentItem.heading
     }
 
     override fun getItemCount(): Int {

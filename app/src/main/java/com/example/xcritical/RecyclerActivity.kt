@@ -9,30 +9,30 @@ class RecyclerActivity : AppCompatActivity() {
     private lateinit var newRecyclerView: RecyclerView
     private lateinit var newArrayList: ArrayList<RcData>
     lateinit var imageId : Array<Int>
-    lateinit var heading : Array<String>
+    lateinit var textDate : Array<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler)
 
         imageId = arrayOf(
-            R.drawable.ic_launcher_background,
-            R.drawable.ic_launcher_background,
-            R.drawable.ic_launcher_background,
-            R.drawable.ic_launcher_background,
-            R.drawable.ic_launcher_background,
-            R.drawable.ic_launcher_background,
-            R.drawable.ic_launcher_background,
+            R.drawable.ic_frame_rc,
+            R.drawable.ic_frame_rc,
+            R.drawable.ic_frame_rc,
+            R.drawable.ic_frame_rc,
+            R.drawable.ic_frame_rc,
+            R.drawable.ic_frame_rc,
+            R.drawable.ic_frame_rc,
         )
 
-        heading = arrayOf(
-            "asdasdsad",
-            "asds213asdsad",
-            "asd75asdsad",
-            "asd345asdsad",
-            "asdagfhsdsad",
-            "asdadfgdfgsdsad",
-            "asduliasdsad"
+        textDate = arrayOf(
+            "02.01.1992",
+            "15.10.2002",
+            "20.12.1998",
+            "23.11.2006",
+            "30.01.2008",
+            "08.03.2010",
+            "23.02.2015"
         )
 
         newRecyclerView = findViewById(R.id.recyclerView)
@@ -45,7 +45,7 @@ class RecyclerActivity : AppCompatActivity() {
 
     private fun getUserdata(){
         for (i in imageId.indices){
-            val news = RcData(imageId[i],heading[i])
+            val news = RcData(imageId[i],textDate[i])
             newArrayList.add(news)
         }
         newRecyclerView.adapter = MyAdapter(newArrayList)
