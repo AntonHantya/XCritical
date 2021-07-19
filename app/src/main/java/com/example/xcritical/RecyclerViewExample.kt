@@ -9,10 +9,10 @@ class RecyclerViewExample : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler_view_example)
-        val list = generateDummyList(500)
-        recycler_view.adapter = ExampleAdapter(list)
-        recycler_view.layoutManager = LinearLayoutManager(this)
-        recycler_view.setHasFixedSize(true)
+//        val list = generateDummyList(500)
+//        recycler_view.adapter = ExampleAdapter(list)
+//        recycler_view.layoutManager = LinearLayoutManager(this)
+//        recycler_view.setHasFixedSize(true)
     }
     private fun generateDummyList(size: Int): List<ExampleItem>{
         val list = ArrayList<ExampleItem>()
