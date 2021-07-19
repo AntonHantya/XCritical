@@ -10,6 +10,7 @@
     <string name="button_registration">Зарегестрироваться</string>
     <string name="email_text">E-mail</string>
     <string name="password_text">Пароль</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="rc_title_name">Headline</string>
+    <string name="rc_content">Lorem ipsum dolor sit amet...</string>
+    <string name="rc_date">09.12.2021</string>
 </resources>

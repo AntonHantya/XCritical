@@ -19,9 +19,6 @@ class ExampleAdapter(private val list: List<ExampleItem>) : RecyclerView.Adapter
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentItem = list[position]
         holder.image_date.setImageResource(currentItem.imageResource)
-        holder.text_date.text = currentItem.text
-
-
     }
 
     override fun getItemCount(): Int {
@@ -30,6 +27,5 @@ class ExampleAdapter(private val list: List<ExampleItem>) : RecyclerView.Adapter
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val image_date: ImageView = itemView.findViewById(R.id.imageDate)
-        val text_date: TextView = itemView.findViewById(R.id.textDate)
     }
 }
