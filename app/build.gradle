@@ -33,6 +33,11 @@ android {
 }
 
 dependencies {
+    apply plugin: 'kotlin-android-extensions'
+
+
+    implementation "androidx.cardview:cardview:1.0.0"
+    implementation "androidx.recyclerview:recyclerview:1.2.1"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.6.0'
