@@ -13,4 +13,8 @@
     <string name="rc_title_name">Headline</string>
     <string name="rc_content">Lorem ipsum dolor sit amet...</string>
     <string name="rc_date">09.12.2021</string>
+    <string name="gridfour">gridfour</string>
+    <string name="list">list</string>
+    <string name="refresh">refresh</string>
+    <string name="chat">chat</string>
 </resources>
