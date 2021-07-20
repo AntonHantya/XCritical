@@ -2,6 +2,9 @@ package com.example.xcritical
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -30,5 +33,19 @@ class NavBarActivity : AppCompatActivity() {
         binding.projectsFab.setOnClickListener{
             navigationController.navigate(R.id.plusFragment)
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.toolbar_menu,menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId){
+            R.id.testFragment -> {
+                Toast.makeText(this,"hello",Toast.LENGTH_SHORT).show()
+            }
+        }
+        return true
     }
 }
