@@ -1,30 +1,34 @@
 package com.example.xcritical
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.xcritical.databinding.ActivityNavBarBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class NavBarActivity : AppCompatActivity() {
+
+    private lateinit var binding : ActivityNavBarBinding
+    private lateinit var navigationController: NavController
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_nav_bar)
 
-        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
-        val navController = findNavController(R.id.fragment)
-        bottomNavigationView.setupWithNavController(navController)
+        binding = ActivityNavBarBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+        initializeListeners()
 
-        val fab = findViewById<FloatingActionButton>(R.id.projects_fab)
-        fab.setOnClickListener {
-            navController.navigate(R.id.plusFragment)
+        navigationController = findNavController(R.id.fragment)
+        binding.bottomNavigationView.setupWithNavController(navigationController)
+
+    }
+    private fun initializeListeners(){
+        binding.projectsFab.setOnClickListener{
+            navigationController.navigate(R.id.plusFragment)
         }
-
-
     }
 }

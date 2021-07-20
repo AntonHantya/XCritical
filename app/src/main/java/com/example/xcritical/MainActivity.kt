@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
@@ -69,5 +70,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivityRegistration::class.java)
             startActivity(intent)
         }
+
+
     }
 }
