@@ -11,6 +11,7 @@ import kotlinx.android.synthetic.main.fragment_folder.*
 import kotlinx.android.synthetic.main.fragment_plus.*
 
 class FolderFragment : Fragment() {
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -22,7 +23,6 @@ class FolderFragment : Fragment() {
         super.onViewCreated(itemView, savedInstanceState)
 
         val list = generateDummyList(10)
-
         recycler_view.apply {
             layoutManager = LinearLayoutManager(activity)
             adapter = ExampleAdapter(list)

@@ -37,6 +37,7 @@ class NavBarActivity : AppCompatActivity() {
         binding = ActivityNavBarBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
         initializeListeners()
 
         folder = FragmentFolderBinding.bind(view)
@@ -46,6 +47,32 @@ class NavBarActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar)
         supportActionBar?.title = ""
+
+        binding.apply {
+            navDrawer.setNavigationItemSelectedListener {
+                when(it.itemId){
+                    R.id.info -> {
+                        Toast.makeText(this@NavBarActivity,"О приложении",Toast.LENGTH_SHORT).show()
+                    }
+                    R.id.help -> {
+                        Toast.makeText(this@NavBarActivity,"Связаться с поддержкой",Toast.LENGTH_SHORT).show()
+                    }
+                    R.id.bell -> {
+                        Toast.makeText(this@NavBarActivity,"Уведомления",Toast.LENGTH_SHORT).show()
+                    }
+                    R.id.subscribe -> {
+                        Toast.makeText(this@NavBarActivity,"Pro подписка",Toast.LENGTH_SHORT).show()
+                    }
+                    R.id.settings -> {
+                        Toast.makeText(this@NavBarActivity,"Настройки",Toast.LENGTH_SHORT).show()
+                    }
+                    R.id.signout -> {
+                        Toast.makeText(this@NavBarActivity,"Выйти",Toast.LENGTH_SHORT).show()
+                    }
+                }
+                true
+            }
+        }
 
         val listButton: ImageButton = this.findViewById(R.id.btn_list_menu) as ImageButton
         listButton.setOnClickListener {
