@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_folder.*
 import kotlinx.android.synthetic.main.fragment_plus.*
@@ -23,7 +24,6 @@ class FolderFragment : Fragment() {
         val list = generateDummyList(10)
 
         recycler_view.apply {
-
             layoutManager = LinearLayoutManager(activity)
             adapter = ExampleAdapter(list)
             setHasFixedSize(true)
@@ -44,4 +44,5 @@ class FolderFragment : Fragment() {
         }
         return list
     }
+
 }

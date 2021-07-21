@@ -1,5 +1,6 @@
 package com.example.xcritical
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,16 +13,23 @@ import android.widget.Toolbar
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.xcritical.databinding.ActivityMainBinding.inflate
 import com.example.xcritical.databinding.ActivityNavBarBinding
+import com.example.xcritical.databinding.FragmentFolderBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.activity_nav_bar.*
+import kotlinx.android.synthetic.main.fragment_folder.*
 
 class NavBarActivity : AppCompatActivity() {
 
 
     private lateinit var binding : ActivityNavBarBinding
     private lateinit var navigationController: NavController
+    private lateinit var folder : FragmentFolderBinding
+    var flag: Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,14 +39,16 @@ class NavBarActivity : AppCompatActivity() {
         setContentView(view)
         initializeListeners()
 
+        folder = FragmentFolderBinding.bind(view)
+
         navigationController = findNavController(R.id.fragment)
         binding.bottomNavigationView.setupWithNavController(navigationController)
 
         setSupportActionBar(toolbar)
         supportActionBar?.title = ""
 
-        val moneyButton: ImageButton = this.findViewById(R.id.btn_list_menu) as ImageButton
-        moneyButton.setOnClickListener {
+        val listButton: ImageButton = this.findViewById(R.id.btn_list_menu) as ImageButton
+        listButton.setOnClickListener {
             Toast.makeText(this, "TESTING BUTTON CLICK 1", Toast.LENGTH_SHORT).show()
         }
 
@@ -59,7 +69,18 @@ class NavBarActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId){
             R.id.gridfour_item -> {
-                Toast.makeText(this,"Grid item",Toast.LENGTH_SHORT).show()
+                if (flag){
+                    folder.recyclerView.apply {
+                        layoutManager = GridLayoutManager(this@NavBarActivity,2,GridLayoutManager.VERTICAL,false)
+                    }
+                    flag = false
+                }
+                else{
+                    folder.recyclerView.apply {
+                        layoutManager = LinearLayoutManager(this@NavBarActivity)
+                    }
+                    flag = true
+                }
             }
             R.id.chat_item -> {
                 Toast.makeText(this,"Chat item",Toast.LENGTH_SHORT).show()
