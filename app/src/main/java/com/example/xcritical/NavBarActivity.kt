@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.ImageButton
 import android.widget.Toast
 import android.widget.Toolbar
 import androidx.navigation.NavController
@@ -31,8 +33,16 @@ class NavBarActivity : AppCompatActivity() {
 
         navigationController = findNavController(R.id.fragment)
         binding.bottomNavigationView.setupWithNavController(navigationController)
+
         setSupportActionBar(toolbar)
         supportActionBar?.title = ""
+
+        val moneyButton: ImageButton = this.findViewById(R.id.btn_list_menu) as ImageButton
+        moneyButton.setOnClickListener {
+            Toast.makeText(this, "TESTING BUTTON CLICK 1", Toast.LENGTH_SHORT).show()
+        }
+
+
 
     }
     private fun initializeListeners(){
