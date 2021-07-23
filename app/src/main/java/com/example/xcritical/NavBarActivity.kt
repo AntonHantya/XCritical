@@ -4,12 +4,15 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.Toast
 import android.widget.Toolbar
+import androidx.core.view.GravityCompat
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -17,10 +20,13 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.xcritical.databinding.ActivityMainBinding.inflate
 import com.example.xcritical.databinding.ActivityNavBarBinding
+import com.example.xcritical.databinding.DrawerHeadBinding
 import com.example.xcritical.databinding.FragmentFolderBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.activity_nav_bar.*
+import kotlinx.android.synthetic.main.drawer_head.*
+import kotlinx.android.synthetic.main.drawer_head.view.*
 import kotlinx.android.synthetic.main.fragment_folder.*
 
 class NavBarActivity : AppCompatActivity() {
@@ -48,8 +54,11 @@ class NavBarActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.title = ""
 
+        val signOutButton = Intent(this, MainActivity::class.java)
+
         binding.apply {
             navDrawer.setNavigationItemSelectedListener {
+
                 when(it.itemId){
                     R.id.info -> {
                         Toast.makeText(this@NavBarActivity,"О приложении",Toast.LENGTH_SHORT).show()
@@ -67,21 +76,20 @@ class NavBarActivity : AppCompatActivity() {
                         Toast.makeText(this@NavBarActivity,"Настройки",Toast.LENGTH_SHORT).show()
                     }
                     R.id.signout -> {
-                        Toast.makeText(this@NavBarActivity,"Выйти",Toast.LENGTH_SHORT).show()
+                        startActivity(signOutButton)
                     }
                 }
+                //drawer.closeDrawer((GravityCompat.START))
                 true
             }
         }
 
         val listButton: ImageButton = this.findViewById(R.id.btn_list_menu) as ImageButton
         listButton.setOnClickListener {
-            Toast.makeText(this, "TESTING BUTTON CLICK 1", Toast.LENGTH_SHORT).show()
+            drawer.openDrawer(GravityCompat.START)
         }
-
-
-
     }
+
     private fun initializeListeners(){
         binding.projectsFab.setOnClickListener{
             navigationController.navigate(R.id.plusFragment)
