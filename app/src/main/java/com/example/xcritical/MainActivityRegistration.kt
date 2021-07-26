@@ -8,7 +8,9 @@ import android.util.Patterns
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivityRegistration : AppCompatActivity() {
 
     private val incEmail by lazy {findViewById<TextView>(R.id.textView2) }

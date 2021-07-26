@@ -7,9 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_folder.*
 import kotlinx.android.synthetic.main.fragment_plus.*
 
+@AndroidEntryPoint
 class FolderFragment : Fragment() {
 
     override fun onCreateView(

@@ -24,11 +24,13 @@ import com.example.xcritical.databinding.DrawerHeadBinding
 import com.example.xcritical.databinding.FragmentFolderBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_nav_bar.*
 import kotlinx.android.synthetic.main.drawer_head.*
 import kotlinx.android.synthetic.main.drawer_head.view.*
 import kotlinx.android.synthetic.main.fragment_folder.*
 
+@AndroidEntryPoint
 class NavBarActivity : AppCompatActivity() {
 
 
