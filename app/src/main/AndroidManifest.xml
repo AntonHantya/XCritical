@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.XCritical">
-        <activity android:name=".RecyclerViewExample"></activity>
         <activity android:name=".NavBarActivity" />
         <activity android:name=".MainActivityRegistration" />
         <activity android:name=".MainActivity">

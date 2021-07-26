@@ -20,4 +20,29 @@
         android:name="com.example.xcritical.ImageFragment"
         android:label="fragment_image"
         tools:layout="@layout/fragment_image" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.xcritical.SettingsFragment"
+        android:label="fragment_image"
+        tools:layout="@layout/fragment_image" />
+    <fragment
+        android:id="@+id/subscribeFragment"
+        android:name="com.example.xcritical.SubscribeFragment"
+        android:label="fragment_image"
+        tools:layout="@layout/fragment_image" />
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="com.example.xcritical.HelpFragment"
+        android:label="fragment_image"
+        tools:layout="@layout/fragment_image" />
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.example.xcritical.InfoFragment"
+        android:label="fragment_image"
+        tools:layout="@layout/fragment_image" />
+    <fragment
+        android:id="@+id/bellFragment"
+        android:name="com.example.xcritical.BellFragment"
+        android:label="fragment_image"
+        tools:layout="@layout/fragment_image" />
 </navigation>

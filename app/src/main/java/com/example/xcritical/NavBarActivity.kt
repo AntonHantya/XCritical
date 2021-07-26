@@ -40,6 +40,8 @@ class NavBarActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
+
         binding = ActivityNavBarBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
@@ -56,30 +58,31 @@ class NavBarActivity : AppCompatActivity() {
 
         val signOutButton = Intent(this, MainActivity::class.java)
 
+
         binding.apply {
             navDrawer.setNavigationItemSelectedListener {
 
                 when(it.itemId){
                     R.id.info -> {
-                        Toast.makeText(this@NavBarActivity,"О приложении",Toast.LENGTH_SHORT).show()
+                        navigationController.navigate(R.id.infoFragment)
                     }
                     R.id.help -> {
-                        Toast.makeText(this@NavBarActivity,"Связаться с поддержкой",Toast.LENGTH_SHORT).show()
+                        navigationController.navigate(R.id.helpFragment)
                     }
                     R.id.bell -> {
-                        Toast.makeText(this@NavBarActivity,"Уведомления",Toast.LENGTH_SHORT).show()
+                        navigationController.navigate(R.id.bellFragment)
                     }
                     R.id.subscribe -> {
-                        Toast.makeText(this@NavBarActivity,"Pro подписка",Toast.LENGTH_SHORT).show()
+                        navigationController.navigate(R.id.subscribeFragment)
                     }
                     R.id.settings -> {
-                        Toast.makeText(this@NavBarActivity,"Настройки",Toast.LENGTH_SHORT).show()
+                        navigationController.navigate(R.id.settingsFragment)
                     }
                     R.id.signout -> {
                         startActivity(signOutButton)
                     }
                 }
-                //drawer.closeDrawer((GravityCompat.START))
+                drawer.closeDrawer((GravityCompat.START))
                 true
             }
         }
