@@ -24,10 +24,7 @@ import com.example.xcritical.databinding.DrawerHeadBinding
 import com.example.xcritical.databinding.FragmentFolderBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import kotlinx.android.synthetic.main.activity_nav_bar.*
-import kotlinx.android.synthetic.main.drawer_head.*
-import kotlinx.android.synthetic.main.drawer_head.view.*
-import kotlinx.android.synthetic.main.fragment_folder.*
+
 
 class NavBarActivity : AppCompatActivity() {
 
@@ -53,7 +50,7 @@ class NavBarActivity : AppCompatActivity() {
         navigationController = findNavController(R.id.fragment)
         binding.bottomNavigationView.setupWithNavController(navigationController)
 
-        setSupportActionBar(toolbar)
+        setSupportActionBar(binding.toolbar)
         supportActionBar?.title = ""
 
         val signOutButton = Intent(this, MainActivity::class.java)
@@ -89,7 +86,7 @@ class NavBarActivity : AppCompatActivity() {
 
         val listButton: ImageButton = this.findViewById(R.id.btn_list_menu) as ImageButton
         listButton.setOnClickListener {
-            drawer.openDrawer(GravityCompat.START)
+            binding.drawer.openDrawer(GravityCompat.START)
         }
     }
 

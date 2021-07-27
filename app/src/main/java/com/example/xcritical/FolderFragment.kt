@@ -7,10 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.fragment_folder.*
-import kotlinx.android.synthetic.main.fragment_plus.*
+import com.example.xcritical.databinding.FragmentFolderBinding
 
 class FolderFragment : Fragment() {
+
+    private lateinit var _binding: FragmentFolderBinding
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,7 +25,7 @@ class FolderFragment : Fragment() {
         super.onViewCreated(itemView, savedInstanceState)
 
         val list = generateDummyList(10)
-        recycler_view.apply {
+            binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(activity)
             adapter = ExampleAdapter(list)
             setHasFixedSize(true)
