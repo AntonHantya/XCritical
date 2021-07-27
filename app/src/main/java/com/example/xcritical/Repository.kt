@@ -5,31 +5,36 @@ import javax.inject.Singleton
 
 @Singleton
 class Repository @Inject constructor(){
+     private var listItems: MutableList<ExampleItem>? = null
+
     init {
+         listItems = mutableListOf(
+            ExampleItem(R.drawable.ic_frame_rc),
+            ExampleItem(R.drawable.ic_devicemobilespeaker),
+            ExampleItem(R.drawable.ic_frame_rc),
+            ExampleItem(R.drawable.ic_devicemobilespeaker),
+            ExampleItem(R.drawable.ic_devicemobilespeaker),
+            ExampleItem(R.drawable.ic_frame_rc),
+            ExampleItem(R.drawable.ic_devicemobilespeaker),
+            ExampleItem(R.drawable.ic_devicemobilespeaker),
+            ExampleItem(R.drawable.ic_frame_rc),
+            ExampleItem(R.drawable.ic_devicemobilespeaker)
+        )
         getAllItems()
     }
-    
-    val listItem: MutableList<ExampleItem> = mutableListOf(
-        ExampleItem(R.drawable.ic_frame_rc),
-        ExampleItem(R.drawable.ic_devicemobilespeaker),
-        ExampleItem(R.drawable.ic_frame_rc),
-        ExampleItem(R.drawable.ic_devicemobilespeaker),
-        ExampleItem(R.drawable.ic_devicemobilespeaker),
-        ExampleItem(R.drawable.ic_frame_rc),
-        ExampleItem(R.drawable.ic_devicemobilespeaker),
-        ExampleItem(R.drawable.ic_devicemobilespeaker),
-        ExampleItem(R.drawable.ic_frame_rc),
-        ExampleItem(R.drawable.ic_devicemobilespeaker)
-    )
+
+
+
+
 
     fun addProject(item: ExampleItem){
-        listItem.add(item)
+        listItems?.add(item)
     }
 
     fun deleteProject(item: Int){
-        listItem.removeAt(item)
+        listItems?.removeAt(item)
     }
-    private fun getAllItems() : MutableList<ExampleItem> {
-        return listItem
+    fun getAllItems() : MutableList<ExampleItem>? {
+        return listItems
     }
 }
