@@ -10,4 +10,19 @@
     <string name="button_registration">Зарегестрироваться</string>
     <string name="email_text">E-mail</string>
     <string name="password_text">Пароль</string>
+    <string name="rc_title_name">Headline</string>
+    <string name="rc_content">Lorem ipsum dolor sit amet...</string>
+    <string name="rc_date">09.12.2021</string>
+    <string name="gridfour">gridfour</string>
+    <string name="list">list</string>
+    <string name="refresh">refresh</string>
+    <string name="chat">chat</string>
+    <string name="bell">Уведомления</string>
+    <string name="help">Связаться с поддержкой</string>
+    <string name="info">О приложении</string>
+    <string name="settings">Настройки</string>
+    <string name="subscribe">Pro подписка</string>
+    <string name="signout">Выйти</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
