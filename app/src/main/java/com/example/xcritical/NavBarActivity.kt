@@ -79,6 +79,7 @@ class NavBarActivity : AppCompatActivity() {
         listButton.setOnClickListener {
             binding.drawer.openDrawer(GravityCompat.START)
         }
+        setCloseDrawerListener()
     }
 
     private fun initializeListeners(){
@@ -121,10 +122,14 @@ class NavBarActivity : AppCompatActivity() {
         return true
     }
 
-    private fun setCloseDrawerListener() {
-        val headerView = binding.navDrawer.getHeaderView(0)
-        headerView?.findViewById<ImageButton>(R.id.closeButton)?.setOnClickListener {
-            binding.drawer.closeDrawer(GravityCompat.START)
+
+    private fun setCloseDrawerListener(){
+        val headerView = binding.navDrawer?.getHeaderView(0)
+        val closeDrawer = headerView?.findViewById<ImageButton>(R.id.closeButton)
+        if (closeDrawer != null) {
+            closeDrawer.setOnClickListener {
+                binding.drawer.closeDrawer(GravityCompat.START)
+            }
         }
     }
 }
