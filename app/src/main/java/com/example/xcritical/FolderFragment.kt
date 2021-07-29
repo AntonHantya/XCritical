@@ -18,8 +18,9 @@ class FolderFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        return inflater.inflate(R.layout.fragment_folder, container, false)
+        _binding = FragmentFolderBinding.inflate(inflater,container,false)
+        val root : View = _binding.root
+        return root
     }
     override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
         super.onViewCreated(itemView, savedInstanceState)
@@ -46,5 +47,6 @@ class FolderFragment : Fragment() {
         }
         return list
     }
+    
 
 }

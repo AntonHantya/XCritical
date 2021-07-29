@@ -1,29 +1,20 @@
 package com.example.xcritical
 
-import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import android.widget.ImageButton
-import android.widget.ImageView
 import android.widget.Toast
-import android.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.xcritical.databinding.ActivityMainBinding.inflate
 import com.example.xcritical.databinding.ActivityNavBarBinding
-import com.example.xcritical.databinding.DrawerHeadBinding
 import com.example.xcritical.databinding.FragmentFolderBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
 class NavBarActivity : AppCompatActivity() {
@@ -59,7 +50,7 @@ class NavBarActivity : AppCompatActivity() {
         binding.apply {
             navDrawer.setNavigationItemSelectedListener {
 
-                when(it.itemId){
+                when (it.itemId) {
                     R.id.info -> {
                         navigationController.navigate(R.id.infoFragment)
                     }
@@ -128,5 +119,12 @@ class NavBarActivity : AppCompatActivity() {
             }
         }
         return true
+    }
+
+    private fun setCloseDrawerListener() {
+        val headerView = binding.navDrawer.getHeaderView(0)
+        headerView?.findViewById<ImageButton>(R.id.closeButton)?.setOnClickListener {
+            binding.drawer.closeDrawer(GravityCompat.START)
+        }
     }
 }
