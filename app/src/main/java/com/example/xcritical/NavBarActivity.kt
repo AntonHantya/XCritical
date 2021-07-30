@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.core.view.GravityCompat
@@ -80,6 +81,24 @@ class NavBarActivity : AppCompatActivity() {
             binding.drawer.openDrawer(GravityCompat.START)
         }
         setCloseDrawerListener()
+
+        navigationController.addOnDestinationChangedListener{ _, destination, _ ->
+            when(destination.id){
+                R.id.folderFragment -> {
+                    binding.toolbar.visibility = View.VISIBLE
+                    binding.bottomNavigationView.visibility = View.VISIBLE
+                }
+                R.id.plusFragment -> {
+                    binding.toolbar.visibility = View.GONE
+                    binding.bottomNavigationView.visibility = View.GONE
+
+                }
+                R.id.imageFragment -> {
+                    binding.toolbar.visibility = View.VISIBLE
+                    binding.bottomNavigationView.visibility = View.VISIBLE
+                }
+            }
+        }
     }
 
     private fun initializeListeners(){
@@ -121,6 +140,7 @@ class NavBarActivity : AppCompatActivity() {
         }
         return true
     }
+
 
 
     private fun setCloseDrawerListener(){
