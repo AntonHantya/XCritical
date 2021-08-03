@@ -92,6 +92,7 @@ class NavBarActivity : AppCompatActivity() {
                     binding.toolbar.visibility = View.GONE
                     binding.bottomNavigationView.visibility = View.GONE
 
+
                 }
                 R.id.imageFragment -> {
                     binding.toolbar.visibility = View.VISIBLE
